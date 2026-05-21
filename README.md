@@ -1,7 +1,9 @@
 
 # File Encryptor
 
-This is a simple, secure, offline, and open-source way to cryptographically store and retrieve your important files. Use this software to securely store passwords, 2FA backup codes, journalism, or other important documents. Since this is completely offline, it reduces your risk of your data being exposed if a centralized service is breached. It is important that the main password is unique and never written anywhere else.
+**Warning: Many file systems use copy-on-write, which can render this cryptography in this project useless because it writes the decrypted file to disk. Other metadata would still be unencrypted. Consider using LUKS, VeraCrypt, or another encrypted file system for full system security.**
+
+This is a simple, offline, and open-source way to encrypt and decrypt a directory. This works completely offline. It is important that the main password is unique and never written anywhere else.
 
 The system uses python Fernet to symmetrically encrypt and decrypt the files that exist in the same directory as the .py files. If you don't want a file to be encrypted, its name needs to be prefixed with ".noenc".
 
